@@ -1,5 +1,4 @@
 import Title from "../../components/Title";
-import Layout from "../../components/Layout";
 import {API_BASE} from "../../shared/baseUrl";
 import Link from "next/link";
 import {useRouter} from "next/router";
@@ -13,7 +12,7 @@ const UserIndex = ({users}) => {
     }
 
     return (
-        <Layout>
+        <>
             <Head>
                 <title>Users | Nextjs</title>
             </Head>
@@ -68,7 +67,7 @@ const UserIndex = ({users}) => {
         }
       `}
             </style>
-        </Layout>
+        </>
     );
 };
 

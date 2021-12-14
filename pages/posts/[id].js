@@ -1,6 +1,5 @@
 import {useRouter} from "next/router";
 import Title from "../../components/Title";
-import Layout from "../../components/Layout";
 import {API_BASE} from "../../shared/baseUrl";
 import Head from "next/head";
 
@@ -82,7 +81,7 @@ const PostView = ({post, error}) => {
     // }, []);
 
     return (
-        <Layout>
+        <>
             <Head>
                 <title>Post {post.title} Page | Nextjs</title>
             </Head>
@@ -94,7 +93,7 @@ const PostView = ({post, error}) => {
                     <Card title={post.title} body={post.body}/>
                 </>
             )}
-        </Layout>
+        </>
     );
 };
 

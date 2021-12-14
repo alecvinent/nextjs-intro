@@ -2,8 +2,11 @@ import NavBar from "../NavBar";
 import Head from "next/head";
 import Image from "next/image";
 import HTMLMeta from "./metas";
+import {useState} from "react";
 
-const Layout = ({children}) => {
+const Layout = ({children, counter}) => {
+    const [innerCounter, setCounter] = useState(counter);
+    const handleCounter = () => setCounter(innerCounter + 1);
     return (
         <>
             <Head>
@@ -13,6 +16,7 @@ const Layout = ({children}) => {
                 <NavBar/>
             </header>
             <main>
+                <h1 onClick={handleCounter}>{innerCounter}</h1>
                 {children}
             </main>
             <footer>

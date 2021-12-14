@@ -1,8 +1,6 @@
-import {useState, useEffect} from "react";
 
 import Link from "next/link";
 import Title from "../../components/Title";
-import Layout from "../../components/Layout";
 import {API_BASE} from "../../shared/baseUrl";
 import {useRouter} from "next/router";
 import Head from "next/head";
@@ -45,7 +43,7 @@ const PostIndex = ({posts}) => {
     */
 
     return (
-        <Layout>
+        <>
             <Head>
                 <title>Posts | Nextjs</title>
             </Head>
@@ -99,7 +97,7 @@ const PostIndex = ({posts}) => {
           }
         `}
             </style>
-        </Layout>
+        </>
     );
 };
 export default PostIndex;
