@@ -1,5 +1,6 @@
 import NavBar from "../NavBar";
 import Head from "next/head";
+import Image from "next/image";
 import HTMLMeta from "./metas";
 
 const Layout = ({children}) => {
@@ -14,7 +15,9 @@ const Layout = ({children}) => {
             <main>
                 {children}
             </main>
-            <footer>Footer Here</footer>
+            <footer>
+                <p>Using <br/> <a href="https://nextjs.org/" target="_blank" title={'NextJS'}><NextjsLogo width={30} height={30}/></a></p>
+            </footer>
             <style jsx>
                 {`
                   div {
@@ -60,3 +63,9 @@ const Layout = ({children}) => {
 };
 
 export default Layout;
+
+export function NextjsLogo({width=50, height=50}) {
+    return (
+        <Image src={'/images/next-js-seeklogo.com.svg'} width={width} height={height} alt={'NextJS'} />
+    );
+}
