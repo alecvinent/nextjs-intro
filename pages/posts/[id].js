@@ -1,9 +1,8 @@
 import {useRouter} from "next/router";
 import Title from "../../components/Title";
 import Layout from "../../components/Layout";
-import {useEffect, useState} from "react";
 import {API_BASE} from "../../shared/baseUrl";
-import Link from "next/link";
+import Head from "next/head";
 
 const Card = ({title, body}) => {
     return (
@@ -84,6 +83,9 @@ const PostView = ({post, error}) => {
 
     return (
         <Layout>
+            <Head>
+                <title>Post {post.title} Page | Nextjs</title>
+            </Head>
             <Title>Post Page</Title>
             {error && (<Card title="Error" body={error}/>)}
 

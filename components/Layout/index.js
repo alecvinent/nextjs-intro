@@ -1,8 +1,13 @@
 import NavBar from "../NavBar";
+import Head from "next/head";
+import HTMLMeta from "./metas";
 
 const Layout = ({children}) => {
     return (
         <>
+            <Head>
+                <HTMLMeta/>
+            </Head>
             <header>
                 <NavBar/>
             </header>

@@ -5,6 +5,7 @@ import Title from "../../components/Title";
 import Layout from "../../components/Layout";
 import {API_BASE} from "../../shared/baseUrl";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 const PostIndex = ({posts}) => {
     const router = useRouter();
@@ -45,6 +46,9 @@ const PostIndex = ({posts}) => {
 
     return (
         <Layout>
+            <Head>
+                <title>Posts | Nextjs</title>
+            </Head>
             <Title>Posts Page</Title>
             <p>Hello, NextJS</p>
 

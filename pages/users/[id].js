@@ -2,6 +2,7 @@ import {useRouter} from "next/router";
 import Title from "../../components/Title";
 import Layout from "../../components/Layout";
 import {API_BASE} from "../../shared/baseUrl";
+import Head from "next/head";
 
 
 const UserView = ({user}) => {
@@ -13,6 +14,9 @@ const UserView = ({user}) => {
 
     return (
         <Layout>
+            <Head>
+                <title>User {user.name} Page | Nextjs</title>
+            </Head>
             <Title>User Page</Title>
             <p>Hello, {user.name}</p>
             <div className='card'>

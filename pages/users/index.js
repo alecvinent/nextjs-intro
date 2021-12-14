@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import {API_BASE} from "../../shared/baseUrl";
 import Link from "next/link";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 const UserIndex = ({users}) => {
     const router = useRouter();
@@ -13,6 +14,9 @@ const UserIndex = ({users}) => {
 
     return (
         <Layout>
+            <Head>
+                <title>Users | Nextjs</title>
+            </Head>
             <Title>Users Page</Title>
             <div className='grid'>
                 {users && users.map(user => {
@@ -70,7 +74,7 @@ const UserIndex = ({users}) => {
 
 export default UserIndex;
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
     const response = await fetch(API_BASE + '/users');
     const users = await response.json();
 
